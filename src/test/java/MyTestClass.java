@@ -84,4 +84,9 @@ public class MyTestClass {
         assertEquals(expected, actual);
     }
 
+    /*@Test
+    public void testingEditingAUserData() {
+        UserMapper userMapper = new UserMapper(dbConnector);
+        User actual = userMapper.change
+    }*/
 }
