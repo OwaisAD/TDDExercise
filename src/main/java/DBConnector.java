@@ -4,8 +4,8 @@ import java.sql.SQLException;
 
 public class DBConnector {
     private static String URL = "jdbc:mysql://localhost:3306/startcode_test?serverTimezone=Europe/Copenhagen";
-    private static String USER = System.getenv("db_un");
-    private static String PW = System.getenv("db_up");
+    private static String USER = "dev";
+    private static String PW = "ax2";
 
     private static Connection singleton;
 
