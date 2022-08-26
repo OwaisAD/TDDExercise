@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TDDExercise:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>TDDExercise</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="TDDExercise-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="TDDExercise:war exploded" />
+    </root>
+  </artifact>
+</component>
