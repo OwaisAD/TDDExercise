@@ -57,4 +57,32 @@ public class UserMapper {
         }
         return user;
     }
+
+    public User editUserData(int id, String property, String newValue) {
+        User user = null;
+        String sql = "";
+
+        if(property.equals("password")) {
+            sql = "UPDATE usertable SET pw = ? WHERE id = ?";
+        } else if (property.equals("phone")) {
+            sql = "UPDATE usertable SET phone = ? WHERE id = ?";
+        } else if (property.equals("address")) {
+            sql = "UPDATE usertable SET address = ? WHERE id = ?";
+        }
+        try (Connection connection = dbConnector.connection()) {
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setString(1, newValue);
+                ps.setInt(2, id);
+                ps.executeUpdate();
+
+                user = getUser(id);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
 }
